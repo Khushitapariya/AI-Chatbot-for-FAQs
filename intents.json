@@ -19,10 +19,9 @@
          "responses": ["The internships under JustBaat.ai are open to anyone with a strong interest in technology, content creation, and AI, particularly students currently pursuing a degree in computer science, engineering, marketing, or related fields."],
          "context_set": ""
         },
-        {"tag": "TULIP",
+        {"tag": "JustBaat.ai",
          "patterns": ["What is JustBaat.ai ?", "What does JustBaat.ai do ?"],
          "responses": ["JustBaat.ai is an AI-powered platform that allows users to create videos using text input, essentially turning written content into video format with the help of digital avatars and advanced language models.",
-         "The TULIP platform aggregates opportunities from across India for graduates on a single platform and allow them to apply for internships in the domain of urban governance."],
          "context_set": ""
         },
         {"tag": "Stipend",
@@ -51,11 +50,6 @@
         "responses": ["Generally, payment receipt gets updated immediately. In case, your payment receipt is not updated then click on View Transaction Button under Payment tab. Otherwise, it will get updated in 48 to 72 working hours (2 to 3 working days). In case it is not updated even after that, please raise grievance with transaction details (Transaction Id generated while making the payment) through Online Grievance Redressal form. Link is available on Approval Process 2020-21 page."],
         "context_set": ""
         },
-        {"tag": "User ID ",
-        "patterns": ["Our Institution was allotted a User ID last year as a new Institution. Some information was uploaded but the application could not be submitted at that time. Now I want to know that the same User ID can be used for approval process 2020-21. ", "Can i use the user-id generated for approval process of the academic year 2019-20 for the academic year 2020-21","can i use previous year login credential for this year approval process","Can login credentials of previous year be used again for approval process"],
-        "responses": ["No, Institute need to apply afresh for getting login credentials."],
-        "context_set": ""
-        },
         {"tag": "Details",
         "patterns": ["We want to change details which are non-editable / read-only? ", "How to change non-editable/read-only details"," I want to change non editable, read only details"],
         "responses": ["You may contact the Approval Bureau or Regional Office."],
@@ -66,10 +60,5 @@
         "responses": ["If you have not created any payment record under Payment tab then you can re-open the submitted application only once by clicking on “re-open application” button available under Attachments and Submit tab.  Note: After re-open, the application should be resubmitted. Otherwise application will be treated as 'Application Not Submitted'."],
         "context_set": ""
         },
-        {"tag": "Password",
-        "patterns": ["I have applied for forgot password but still I did not receive password on my registered email?", "Where will my password be sent after clicking on forget password?", "I have forgotten my password, how can i get it back?","I forgot my password, can i recover it "],
-        "responses": ["Institute need to submit the Affidavit-1 in the respective Regional Office. Regional Officer will flag the Affidavit Received against your request on web portal. Then password will be sent to the institute’s registered email id. Please check the Spam Folder also in your mailbox for forgot password email. In case of any issue, you may raise your grievance online by Grievance link available @ https://aicte-india.org/bureaus/approval/ap_2020-21"],
-        "context_set": ""
-        }
    ]
 }
