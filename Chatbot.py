@@ -10,8 +10,7 @@ from nltk.stem.lancaster import LancasterStemmer
 nltk.download('punkt')
 stemmer = LancasterStemmer()
 
-data = pd.read_json(
-    "")
+data = pd.read_json("intents.json")
 
 try:
     with open("FAQindents.pickle", "rb") as f:
