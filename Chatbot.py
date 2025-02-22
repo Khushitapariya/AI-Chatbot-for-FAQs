@@ -1,4 +1,4 @@
-import pickle
+'''import pickle
 import tensorflow
 import pandas as pd
 import json
@@ -137,3 +137,63 @@ def chat():
 
 
 chat()
+'''
+from flask import Flask, request, jsonify
+from transformers import pipeline
+from textblob import TextBlob
+import spacy
+
+app = Flask(__name__)
+
+# Load pre-trained models
+nlp = spacy.load("en_core_web_sm")
+qa_pipeline = pipeline("question-answering")
+
+# Sample FAQ data
+faq_data = {
+    "What is JustBaat.ai?": "JustBaat.ai is a platform that provides AI-driven solutions for businesses.",
+    "How does JustBaat.ai work?": "JustBaat.ai uses advanced AI algorithms to analyze and process data.",
+    "What services does JustBaat.ai offer?": "JustBaat.ai offers services like chatbots, data analysis, and AI consulting."
+}
+
+def detect_bias(text):
+    # Simple bias detection using sentiment analysis
+    blob = TextBlob(text)
+    if blob.sentiment.polarity < -0.5:
+        return True
+    return False
+
+def correct_bias(text):
+    # Simple bias correction by rephrasing
+    doc = nlp(text)
+    corrected_text = " ".join([token.text for token in doc if not token.is_stop])
+    return corrected_text
+
+@app.route('/chat', methods=['POST'])
+def chat():
+    user_input = request.json.get('message')
+    
+    # Find the best matching FAQ
+    best_match = None
+    best_score = 0
+    for question in faq_data:
+        doc1 = nlp(question)
+        doc2 = nlp(user_input)
+        similarity = doc1.similarity(doc2)
+        if similarity > best_score:
+            best_score = similarity
+            best_match = question
+    
+    if best_match:
+        response = faq_data[best_match]
+    else:
+        response = "I'm sorry, I don't have an answer to that question."
+    
+    # Detect and correct bias
+    if detect_bias(response):
+        response = correct_bias(response)
+    
+    return jsonify({"response": response})
+
+if __name__ == '__main__':
+    app.run(debug=True)
