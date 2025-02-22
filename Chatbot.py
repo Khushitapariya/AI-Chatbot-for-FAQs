@@ -10,8 +10,8 @@ from nltk.stem.lancaster import LancasterStemmer
 nltk.download('punkt')
 stemmer = LancasterStemmer()
 
-data = pd.read_json(
-    "https://github.com/Khushitapariya/AI-Chatbot-for-FAQs/blob/main/intents.json")
+with open("intents.json") as file:
+    data = json.load(file)
 
 try:
     with open("FAQindents.pickle", "rb") as f:
@@ -87,13 +87,7 @@ except:
 
 
 def bag_of_words(s, words):
-    """
-    This function tokenizes and stems 
-    the words in the input sentence entered
-    by the user and converts it into a bag of
-    words.
-    """
-
+    
     bag = [0 for _ in range(len(words))]
     s_words = nltk.word_tokenize(s)
     s_words = [stemmer.stem(word.lower()) for word in s_words]
