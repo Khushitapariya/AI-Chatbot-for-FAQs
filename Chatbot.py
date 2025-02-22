@@ -151,9 +151,12 @@ qa_pipeline = pipeline("question-answering")
 
 # Sample FAQ data
 faq_data = {
-    "What is JustBaat.ai?": "JustBaat.ai is a platform that provides AI-driven solutions for businesses.",
+    "Hi", "How are you", "Is anyone there?", "Hello", "Good day", "Whats up", "I need help": "Hi, how may I help you ?", "Hi there, how can I help?",
+    "Ok thanks", "See you later", "Goodbye", "I am Leaving", "Have a Good day", "Bye": "Is there anything else I can help with ?", "Talk to you later", "Goodbye!", "Hope I could help!",
+    "what is your name", "what should I call you", "whats your name?": "You can call me cera", "I'm cera!", "I'm cera, here to help you!",
+    "What is JustBaat.ai?": "JustBaat.ai is an AI-powered platform that allows users to create videos using text input, essentially turning written content into video format with the help of digital avatars and advanced language models.",
     "How does JustBaat.ai work?": "JustBaat.ai uses advanced AI algorithms to analyze and process data.",
-    "What services does JustBaat.ai offer?": "JustBaat.ai offers services like chatbots, data analysis, and AI consulting."
+    "What services does JustBaat.ai offer?": "JustBaat.ai offers services like chatbots, Video Editing, and AI consulting."
 }
 
 def detect_bias(text):
