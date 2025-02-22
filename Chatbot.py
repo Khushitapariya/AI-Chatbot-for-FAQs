@@ -11,7 +11,7 @@ nltk.download('punkt')
 stemmer = LancasterStemmer()
 
 data = pd.read_json(
-    "https://raw.githubusercontent.com/Siddesh2801/AI-Chatbot/main/Intents.json?token=GHSAT0AAAAAABSKW6TLEWTS3KOCFBUKBWESYRSFSPA")
+    "https://github.com/Khushitapariya/AI-Chatbot-for-FAQs/blob/main/intents.json")
 
 try:
     with open("FAQindents.pickle", "rb") as f:
