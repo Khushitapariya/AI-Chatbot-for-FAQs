@@ -133,7 +133,7 @@ def chat():
             print("Bot: ", random.choice(response))
         else:
             print("\n")
-            print("Bot: I don't quite understand, try rephrasing your question")
+            print("Bot: I'm not sure about this, let me find more details.")
 
 
 chat()
